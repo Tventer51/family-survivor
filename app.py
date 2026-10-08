@@ -34,6 +34,13 @@ def parse_deadline(value):
 def frame(records, columns=None):
     return pd.DataFrame(records,columns=columns) if columns else pd.DataFrame(records)
 
+def remaining_names(records, episodes, through_episode=None):
+    eliminated={name for episode in episodes if episode['results'] and
+                (through_episode is None or episode['number']<=through_episode)
+                for name in json.loads(episode['out_names'])}
+    return [{**row,'Contestants remaining':', '.join(name for name in row['Roster'].split(', ')
+             if name not in eliminated) or 'None'} for row in records]
+
 app_ui = ui.page_fluid(
     ui.tags.head(ui.tags.link(rel='stylesheet',href='style.css?v=grid3'),
                  ui.tags.link(rel='icon',href='favicon.svg')),
@@ -273,10 +280,10 @@ def server(input: Inputs, output: Outputs, session: Session):
 
     @render.data_frame
     def standings():
-        state(); ep=int(input.standings_episode())
-        if not ep: return render.DataGrid(frame(game.snapshot(actor())['standings'],['Rank','Team','Total','Draft points','Weekly picks','Winner bonus','Contestants remaining','Roster']))
+        s=state(); ep=int(input.standings_episode())
+        if not ep: return render.DataGrid(frame(remaining_names(s['standings'],s['episodes']),['Rank','Team','Total','Draft points','Weekly picks','Winner bonus','Contestants remaining','Roster']))
         rows=game.weekly_standings(actor(),ep,input.standings_mode()=='weekly')
-        return render.DataGrid(frame(rows,['Rank','Team','Week total','Week draft','Week picks','Week bonus','Cumulative','Contestants remaining']))
+        return render.DataGrid(frame(remaining_names(rows,s['episodes'],ep),['Rank','Team','Week total','Week draft','Week picks','Week bonus','Cumulative','Contestants remaining']))
 
     @render.data_frame
     def contestant_scores():
@@ -512,7 +519,7 @@ def server(input: Inputs, output: Outputs, session: Session):
     def download_scores():
         organizer(); s=game.snapshot(actor()); buf=io.StringIO()
         writer=csv.DictWriter(buf,fieldnames=['Rank','Team','Total','Draft points','Weekly picks','Winner bonus','Remaining','Contestants remaining','Roster'])
-        writer.writeheader(); writer.writerows(s['standings']); yield buf.getvalue()
+        writer.writeheader(); writer.writerows(remaining_names(s['standings'],s['episodes'])); yield buf.getvalue()
 
     @reactive.effect
     @reactive.event(input.correct_prediction)
