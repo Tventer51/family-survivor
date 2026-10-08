@@ -274,9 +274,9 @@ def server(input: Inputs, output: Outputs, session: Session):
     @render.data_frame
     def standings():
         state(); ep=int(input.standings_episode())
-        if not ep: return render.DataGrid(frame(game.snapshot(actor())['standings'],['Rank','Team','Total','Draft points','Weekly picks','Winner bonus','Remaining','Roster']))
+        if not ep: return render.DataGrid(frame(game.snapshot(actor())['standings'],['Rank','Team','Total','Draft points','Weekly picks','Winner bonus','Contestants remaining','Roster']))
         rows=game.weekly_standings(actor(),ep,input.standings_mode()=='weekly')
-        return render.DataGrid(frame(rows,['Rank','Team','Week total','Week draft','Week picks','Week bonus','Cumulative','Remaining']))
+        return render.DataGrid(frame(rows,['Rank','Team','Week total','Week draft','Week picks','Week bonus','Cumulative','Contestants remaining']))
 
     @render.data_frame
     def contestant_scores():
@@ -511,7 +511,7 @@ def server(input: Inputs, output: Outputs, session: Session):
     @render.download(filename='survivor-s51-standings.csv')
     def download_scores():
         organizer(); s=game.snapshot(actor()); buf=io.StringIO()
-        writer=csv.DictWriter(buf,fieldnames=['Rank','Team','Total','Draft points','Weekly picks','Winner bonus','Remaining','Roster'])
+        writer=csv.DictWriter(buf,fieldnames=['Rank','Team','Total','Draft points','Weekly picks','Winner bonus','Remaining','Contestants remaining','Roster'])
         writer.writeheader(); writer.writerows(s['standings']); yield buf.getvalue()
 
     @reactive.effect
