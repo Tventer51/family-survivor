@@ -1,0 +1,730 @@
+{
+  "teams": [
+    {
+      "name": "Jenna",
+      "roster": [
+        "Maggie",
+        "Cristian",
+        "Patt",
+        "Ana"
+      ]
+    },
+    {
+      "name": "Erin",
+      "roster": [
+        "Brady",
+        "Mike",
+        "Jenna",
+        "Angelica"
+      ]
+    },
+    {
+      "name": "Tertius",
+      "roster": [
+        "Carter",
+        "Brady",
+        "Ori",
+        "Devin"
+      ]
+    },
+    {
+      "name": "Ryan",
+      "roster": [
+        "Kristin",
+        "Eric",
+        "Lewis",
+        "Linnea"
+      ]
+    },
+    {
+      "name": "Michelle",
+      "roster": [
+        "Devin",
+        "Patt",
+        "Linnea",
+        "Rob"
+      ]
+    },
+    {
+      "name": "Genelle",
+      "roster": [
+        "An Thien",
+        "Ori",
+        "Sharonda",
+        "Ana"
+      ]
+    },
+    {
+      "name": "Matt",
+      "roster": [
+        "Aaliyah",
+        "Danny",
+        "Cristian",
+        "Sharonda"
+      ]
+    },
+    {
+      "name": "Annabel",
+      "roster": [
+        "Alexis",
+        "Kristin",
+        "Angelica",
+        "Ori"
+      ]
+    },
+    {
+      "name": "Nick",
+      "roster": [
+        "Mike",
+        "Carter",
+        "Jenna",
+        "Danny"
+      ]
+    },
+    {
+      "name": "Cosette",
+      "roster": [
+        "Ana",
+        "Aaliyah",
+        "Devin",
+        "Angelica"
+      ]
+    },
+    {
+      "name": "Kenny/Max",
+      "roster": [
+        "Danny",
+        "Eric",
+        "Rob",
+        "Kristin"
+      ]
+    },
+    {
+      "name": "Evaline",
+      "roster": [
+        "Alexis",
+        "Lewis",
+        "Maggie",
+        "An Thien"
+      ]
+    }
+  ],
+  "contestants": [
+    "Aaliyah",
+    "Alexis",
+    "An Thien",
+    "Ana",
+    "Brady",
+    "Carter",
+    "Cristian",
+    "Devin",
+    "Eric",
+    "Angelica",
+    "Jenna",
+    "Danny",
+    "Kristin",
+    "Lewis",
+    "Linnea",
+    "Maggie",
+    "Mike",
+    "Ori",
+    "Patt",
+    "Rob",
+    "Sharonda"
+  ],
+  "events": [],
+  "picks": [
+    {
+      "team": "Jenna",
+      "episode": 1,
+      "out": "Devin",
+      "title": "Angelica",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Jenna",
+      "episode": 2,
+      "out": "Brady",
+      "title": "Kristin",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Jenna",
+      "episode": 3,
+      "out": "Rob",
+      "title": "Eric",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Tertius",
+      "episode": 1,
+      "out": "Patt",
+      "title": "Rob",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Tertius",
+      "episode": 2,
+      "out": "Devin",
+      "title": "No One",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Tertius",
+      "episode": 3,
+      "out": "Rob",
+      "title": "Lewis",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Michelle",
+      "episode": 1,
+      "out": "Aaliyah",
+      "title": "Jeff Probst",
+      "winner": "Danny",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Michelle",
+      "episode": 2,
+      "out": "Jenna",
+      "title": "Devin",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Michelle",
+      "episode": 3,
+      "out": "Kristin",
+      "title": "Brady",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Ryan",
+      "episode": 1,
+      "out": "Mike",
+      "title": "Aaliyah",
+      "winner": "Kristin",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Ryan",
+      "episode": 2,
+      "out": "Eric",
+      "title": "Angelica",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Genelle",
+      "episode": 1,
+      "out": "Sharonda",
+      "title": "Lewis",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Genelle",
+      "episode": 2,
+      "out": "Ori",
+      "title": "Alexis",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Matt",
+      "episode": 1,
+      "out": "Jenna",
+      "title": "No One",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Matt",
+      "episode": 2,
+      "out": "Lewis",
+      "title": "No One",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Erin",
+      "episode": 1,
+      "out": "Cristian",
+      "title": "Jenna",
+      "winner": "Carter",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Erin",
+      "episode": 2,
+      "out": "Devin",
+      "title": "Devin",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Erin",
+      "episode": 3,
+      "out": "Rob",
+      "title": "Eric",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Nick",
+      "episode": 1,
+      "out": "An Thien",
+      "title": "Aaliyah",
+      "winner": "Danny",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Nick",
+      "episode": 2,
+      "out": "Patt",
+      "title": "Mike",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Nick",
+      "episode": 3,
+      "out": "Cristian",
+      "title": "Linnea",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Annabel",
+      "episode": 1,
+      "out": "Cristian",
+      "title": "Brady",
+      "winner": "Alexis",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Annabel",
+      "episode": 2,
+      "out": "Cristian",
+      "title": "Eric",
+      "winner": "Alexis",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Annabel",
+      "episode": 3,
+      "out": "Eric",
+      "title": "Eric",
+      "winner": "Alexis",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Evaline",
+      "episode": 1,
+      "out": "Rob",
+      "title": "Jeff Probst",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Evaline",
+      "episode": 2,
+      "out": "Brady",
+      "title": "No One",
+      "winner": "Alexis",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Evaline",
+      "episode": 3,
+      "out": "Brady",
+      "title": "No One",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Cosette",
+      "episode": 1,
+      "out": "An Thien",
+      "title": "Jeff Probst",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Cosette",
+      "episode": 2,
+      "out": "Maggie",
+      "title": "An Thien",
+      "winner": "Aaliyah",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Cosette",
+      "episode": 3,
+      "out": "Carter",
+      "title": "Eric",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Kenny/Max",
+      "episode": 1,
+      "out": "Ana",
+      "title": "Brady",
+      "winner": "Brady",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Kenny/Max",
+      "episode": 2,
+      "out": "Rob",
+      "title": "Brady",
+      "winner": "What Ryan picked",
+      "legacy_out": 0,
+      "legacy_title": 0
+    },
+    {
+      "team": "Kenny/Max",
+      "episode": 3,
+      "out": "Devin",
+      "title": "Rob",
+      "winner": "",
+      "legacy_out": 0,
+      "legacy_title": 0
+    }
+  ],
+  "rules": [
+    {
+      "section": "CHALLENGES",
+      "group": "Team",
+      "label": "Win reward",
+      "points": 15.0,
+      "note": ""
+    },
+    {
+      "section": "CHALLENGES",
+      "group": "Team",
+      "label": "Win immunity",
+      "points": 30.0,
+      "note": ""
+    },
+    {
+      "section": "CHALLENGES",
+      "group": "Team",
+      "label": "(If 3 tribes) reward 1st",
+      "points": 15.0,
+      "note": ""
+    },
+    {
+      "section": "CHALLENGES",
+      "group": "Team",
+      "label": "(If 3 tribes) reward 2nd",
+      "points": 5.0,
+      "note": ""
+    },
+    {
+      "section": "CHALLENGES",
+      "group": "Team",
+      "label": "(If 3 tribes) immunity 1st",
+      "points": 30.0,
+      "note": ""
+    },
+    {
+      "section": "CHALLENGES",
+      "group": "Team",
+      "label": "(If 3 tribes) immunity 2nd",
+      "points": 15.0,
+      "note": ""
+    },
+    {
+      "section": "CHALLENGES",
+      "group": "Team",
+      "label": "Initial Challenge of Season: 1st",
+      "points": 25.0,
+      "note": ""
+    },
+    {
+      "section": "CHALLENGES",
+      "group": "Team",
+      "label": "Initial Challenge of Season: 2nd",
+      "points": 15.0,
+      "note": ""
+    },
+    {
+      "section": "CHALLENGES",
+      "group": "Individual",
+      "label": "Win reward",
+      "points": 30.0,
+      "note": ""
+    },
+    {
+      "section": "CHALLENGES",
+      "group": "Individual",
+      "label": "Be taken on reward",
+      "points": 10.0,
+      "note": ""
+    },
+    {
+      "section": "CHALLENGES",
+      "group": "Individual",
+      "label": "Win immunity",
+      "points": 60.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Idol/Advantage",
+      "label": "Find beware advantage, but pass on it",
+      "points": -20.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Idol/Advantage",
+      "label": "Find or win idol/advantage (Journey)",
+      "points": 40.0,
+      "note": "Counts as finding even if it doesnt have power yet"
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Idol/Advantage",
+      "label": "Lose Journey",
+      "points": -15.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Idol/Advantage",
+      "label": "Win 1:1 Challenge",
+      "points": 25.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Idol/Advantage",
+      "label": "Correctly play idol/advantage",
+      "points": 50.0,
+      "note": "Correct and incorrect is slightly subjective and there is room for discussion. As a general rule correct=they are glad they did it, incorrect=they wish they had not"
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Idol/Advantage",
+      "label": "Incorrectly play idol/advantage",
+      "points": -40.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Idol/Advantage",
+      "label": "Go home with idol/advantage that could have saved",
+      "points": -75.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Idol/Advantage",
+      "label": "Play idol/advantage incorrectly but last chance to use",
+      "points": 10.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Idol/Advantage",
+      "label": "Being on the right side of the vote",
+      "points": 5.0,
+      "note": "Counts as \"right side\" if a vote split is planned."
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Idol/Advantage",
+      "label": "Being on the wrong side of the vote",
+      "points": -5.0,
+      "note": "Does not apply for eliminated contestants"
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Shot in the Dark (SITD)",
+      "label": "Use SITD correctly (works)",
+      "points": 50.0,
+      "note": "Correct dice play is when the individual received the majority or tied for the majority of the votes. Incorrect is any other time"
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Shot in the Dark (SITD)",
+      "label": "Use SITD correctly (fails)",
+      "points": 15.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Shot in the Dark (SITD)",
+      "label": "Use SITD incorrectly",
+      "points": -40.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Shot in the Dark (SITD)",
+      "label": "Go home with dice in pocket",
+      "points": -5.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Other",
+      "label": "Make fake idol and someone believes it",
+      "points": 30.0,
+      "note": "Belief is difficult to judge but will be based on the players communications shown with others and in confessionals"
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Other",
+      "label": "Play fake idol believing its real",
+      "points": -30.0,
+      "note": ""
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Other",
+      "label": "Not having a vote at tribal",
+      "points": -25.0,
+      "note": "This penalty applies to every tribal that the player is without a vote"
+    },
+    {
+      "section": "GAMEPLAY",
+      "group": "Other",
+      "label": "Sabotaging their Tribe (group decides which)",
+      "points": "+25 or -25",
+      "note": ""
+    },
+    {
+      "section": "LOSING AND WINNING",
+      "group": "Getting voted out",
+      "label": "1st person voted out",
+      "points": -75.0,
+      "note": "First 7 out penalty starts with the second to go home since the first out has a unique penalty"
+    },
+    {
+      "section": "LOSING AND WINNING",
+      "group": "Getting voted out",
+      "label": "First 7 out (2-7)",
+      "points": -50.0,
+      "note": ""
+    },
+    {
+      "section": "LOSING AND WINNING",
+      "group": "Getting voted out",
+      "label": "Middle 7 out (8-14)",
+      "points": -40.0,
+      "note": "Quitting counts as getting voted out"
+    },
+    {
+      "section": "LOSING AND WINNING",
+      "group": "Getting voted out",
+      "label": "Last 5 out (15-21)",
+      "points": -30.0,
+      "note": "Medically evacuated counts as getting voted out; however, they will only lose half the amount of points"
+    },
+    {
+      "section": "LOSING AND WINNING",
+      "group": "Getting voted out",
+      "label": "Making the merge",
+      "points": 25.0,
+      "note": ""
+    },
+    {
+      "section": "LOSING AND WINNING",
+      "group": "Final Tribals",
+      "label": "Win Fire Making",
+      "points": 75.0,
+      "note": "Losing fire making counts as being voted out"
+    },
+    {
+      "section": "LOSING AND WINNING",
+      "group": "Final Tribals",
+      "label": "3rd Place",
+      "points": 60.0,
+      "note": "A tie for 2nd results in both players receiving 60 points. In the event that the final tribal is only two players there will be no points awarded for 3rd and they will receive the last 5 out penalty"
+    },
+    {
+      "section": "LOSING AND WINNING",
+      "group": "Final Tribals",
+      "label": "2nd Place",
+      "points": 80.0,
+      "note": ""
+    },
+    {
+      "section": "LOSING AND WINNING",
+      "group": "Final Tribals",
+      "label": "Winner",
+      "points": 250.0,
+      "note": ""
+    }
+  ],
+  "bonuses": {
+    "1": 250.0,
+    "2": 200.0,
+    "3": 150.0,
+    "4": 100.0,
+    "5": 90.0,
+    "6": 80.0,
+    "7": 70.0,
+    "8": 60.0,
+    "9": 50.0,
+    "10": 40.0,
+    "11": 30.0,
+    "12": 20.0,
+    "13": 10.0
+  },
+  "source": "Pretty_Venter Fam Survivor S51.xlsx",
+  "source_episodes": 3,
+  "notes": [
+    "Scoring starts from a clean slate. No imported score entries or inferred episode results are used. Teams, weekly picks and winner predictions are preserved.",
+    "Teams tab is the roster source. Draft rosters match, with different pick ordering.",
+    "Weekly Picks literal entries take priority over Form Responses; latest form response fills missing entries.",
+    "Written title-guess rule is 30 points. Some workbook formulas incorrectly use 15.",
+    "Cosette has an episode 2 winner prediction of Aaliya (normalized to Aaliyah), who was already eliminated. Review this source entry before playing.",
+    "Kenny/Max episode 2 winner text What Ryan picked is unresolved; the earlier explicit episode 1 prediction Brady is used.",
+    "No account emails are imported or used as proof of identity. Organizer assigns team access explicitly.",
+    "Episode 1 Other title picks (Michelle, Evaline, Cosette) represent Jeff Probst and earn 30 points when episode 1 results are published with Jeff as the title speaker. Explicit No One picks are kept separate."
+  ]
+}
