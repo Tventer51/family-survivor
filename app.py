@@ -51,6 +51,7 @@ def server(input: Inputs, output: Outputs, session: Session):
     grid_loaded={}
     dropdown_choices={}
     pending_delete=reactive.value(None)
+    state_data=reactive.value(None)
 
     def actor():
         ident=identity.get()
@@ -70,11 +71,22 @@ def server(input: Inputs, output: Outputs, session: Session):
             logging.exception('Game operation failed')
             ui.notification_show('Unable to save. Your changes have not been confirmed. Try again.',type='error',duration=10)
 
-    @reactive.calc
-    def state():
+    @reactive.effect
+    def poll_state():
         revision.get()
         reactive.invalidate_later(5)
-        return game.snapshot(actor())
+        latest=game.snapshot(actor())
+        with reactive.isolate(): previous=state_data.get()
+        # Polling must not invalidate table renderers when nothing changed.
+        if latest!=previous: state_data.set(latest)
+
+    @reactive.calc
+    def state():
+        ident=actor()
+        current=state_data.get()
+        req(current)
+        req(current['user']['username']==ident['username'] and current['user']['version']==ident['version'])
+        return current
 
     @reactive.effect
     def expire_session():
