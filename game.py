@@ -213,6 +213,15 @@ def my_teams(identity):
         user=require(db,identity)
         return [r['team'] for r in db.execute('SELECT team FROM access WHERE username=? ORDER BY team',(user['username'],))]
 
+def accounts(identity):
+    with connection() as db:
+        require(db,identity,admin=True)
+        users=[dict(r) for r in db.execute('SELECT username,active FROM users ORDER BY username')]
+        assignments={}
+        for row in db.execute('SELECT username,team FROM access ORDER BY username,team'):
+            assignments.setdefault(row['username'],[]).append(row['team'])
+        return [{**user,'teams':', '.join(assignments.get(user['username'],[]))} for user in users]
+
 def create_user(identity, username, password, teams):
     username=clean_username(username); hashed=password_hash(password)
     if not teams: raise GameError('Assign at least one team.')

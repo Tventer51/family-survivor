@@ -49,6 +49,7 @@ def server(input: Inputs, output: Outputs, session: Session):
     login_error=reactive.value('')
     selection_ready=reactive.value('')
     grid_loaded={}
+    dropdown_choices={}
     pending_delete=reactive.value(None)
 
     def actor():
@@ -173,7 +174,7 @@ def server(input: Inputs, output: Outputs, session: Session):
 
     @reactive.effect
     @reactive.event(input.logout)
-    def logout(): identity.set(None); selection_ready.set('')
+    def logout(): identity.set(None); selection_ready.set(''); dropdown_choices.clear()
 
     @render.ui
     def voting_form():
@@ -394,21 +395,28 @@ def server(input: Inputs, output: Outputs, session: Session):
 
     @reactive.effect
     def filter_episode_contestants():
-        organizer(); state()
-        names=eligible_names(int(input.admin_episode()))
-        selected=[n for n in (input.episode_out() or []) if n in names]
+        ident=organizer(); state()
+        ep=int(input.admin_episode()); names=eligible_names(ep)
+        key=(ident['username'],ep,tuple(names))
+        if dropdown_choices.get('organizer')==key: return
+        dropdown_choices['organizer']=key
+        with reactive.isolate():
+            selected=[n for n in (input.episode_out() or []) if n in names]
+            title=input.episode_title()
         ui.update_selectize('episode_out',choices=names,selected=selected)
-        title=input.episode_title()
         choices={'':'Not confirmed',**{n:n for n in names},'Jeff Probst':'Jeff Probst','No One':'No One'}
         ui.update_select('episode_title',choices=choices,selected=title if title in choices else '')
 
     @reactive.effect
     def filter_voting_contestants():
-        actor(); state()
-        names=eligible_names(int(input.vote_episode()))
+        ident=actor(); state()
+        ep=int(input.vote_episode()); names=eligible_names(ep)
+        key=(ident['username'],input.vote_team(),ep,tuple(names))
+        if dropdown_choices.get('voting')==key: return
+        dropdown_choices['voting']=key
         for control,choices in [('pick_out',{'':'Choose a contestant',**{n:n for n in names}}),
                                 ('pick_title',{'':'Choose a speaker',**{n:n for n in names},'Jeff Probst':'Jeff Probst','No One':'No One'})]:
-            selected=input[control]()
+            with reactive.isolate(): selected=input[control]()
             ui.update_selectize(control,choices=choices,selected=selected if selected in choices else '')
 
     @render.ui
@@ -480,8 +488,8 @@ def server(input: Inputs, output: Outputs, session: Session):
 
     @render.data_frame
     def accounts_table():
-        organizer(); revision.get()
-        return render.DataGrid(frame(game.rows('SELECT u.username, u.active, GROUP_CONCAT(a.team, ", ") AS teams FROM users u LEFT JOIN access a ON a.username=u.username GROUP BY u.username ORDER BY u.username')))
+        ident=organizer(); revision.get()
+        return render.DataGrid(frame(game.accounts(ident)))
 
     @render.data_frame
     def audit_table():
