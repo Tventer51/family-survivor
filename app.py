@@ -12,6 +12,7 @@ from zoneinfo import ZoneInfo
 import pandas as pd
 from shiny import App, Inputs, Outputs, Session, reactive, render, ui, req
 import game
+import scoring_review
 
 game.initialize()
 LOCAL = ZoneInfo('America/New_York')
@@ -129,6 +130,14 @@ def server(input: Inputs, output: Outputs, session: Session):
                            ui.input_radio_buttons('standings_mode','Ranking basis',{'cumulative':'Cumulative season score','weekly':'That episode only'},selected='cumulative',inline=True),
                            ui.output_text('standings_note'),ui.card(ui.output_data_frame('standings')),
                            ui.card(ui.card_header('Contestant points'),ui.output_data_frame('contestant_scores'))),
+              ui.nav_panel('Episode scoring',
+                           ui.p('Review published contestant points and family pick awards. This view is read-only; only the organizer can change scoring.'),
+                           ui.input_select('review_episode','Episode to review',{str(n):f'Episode {n}' for n in range(1,14)},
+                             selected=str(max((e['number'] for e in game.snapshot(ident)['episodes'] if e['results']),default=1))),
+                           ui.output_text('review_outcome'),
+                           ui.card(ui.card_header('Contestant scoring summary'),ui.output_data_frame('review_summary')),
+                           ui.accordion(ui.accordion_panel('Exact scoring entries and notes',ui.output_data_frame('review_details')),
+                                        ui.accordion_panel('Family weekly-pick points',ui.output_data_frame('review_picks')),open=False)),
               ui.nav_panel('Pick history',ui.p('Your picks appear immediately. Everyone else’s weekly picks appear after results are published.'),
                            ui.output_data_frame('pick_history'),ui.output_ui('pick_delete_controls'),
                            ui.h3('Season-long predictions'),ui.output_data_frame('predictions_table')),
@@ -290,6 +299,28 @@ def server(input: Inputs, output: Outputs, session: Session):
         state(); ep=int(input.standings_episode())
         s=game.snapshot(actor(),ep or None)
         return render.DataGrid(frame([{'Contestant':n,'Points':p} for n,p in sorted(s['contestant_points'].items(),key=lambda x:-x[1])]))
+
+    @render.text
+    def review_outcome():
+        s=state(); ep=int(input.review_episode()); e=next(e for e in s['episodes'] if e['number']==ep)
+        if not e['results']: return 'Results are not published yet. Scores and picks will appear after publication.'
+        return f"Eliminated: {', '.join(json.loads(e['out_names'])) or 'None'} · Title speaker: {e['title']} · Correct weekly picks: 30 points each. Contestant points below are separate from family pick awards."
+
+    @render.data_frame
+    def review_summary():
+        return render.DataGrid(frame(scoring_review.summary(state(),int(input.review_episode()),game.SEED['rules'],NAMES),scoring_review.COLUMNS),filters=True)
+
+    @render.data_frame
+    def review_details():
+        s=state(); ep=int(input.review_episode()); e=next(e for e in s['episodes'] if e['number']==ep)
+        entries=[{'Contestant':v['contestant'],'Scoring event':v['category'],'Points':v['points'],'Note':v['note']} for v in s['events'] if v['episode']==ep] if e['results'] else []
+        return render.DataGrid(frame(entries,['Contestant','Scoring event','Points','Note']),filters=True)
+
+    @render.data_frame
+    def review_picks():
+        s=state(); ep=int(input.review_episode()); e=next(e for e in s['episodes'] if e['number']==ep)
+        records=[{'Team':p['team'],'Out pick':p['out_name'],'Out points':p['out_points'],'Title pick':p['title'],'Title points':p['title_points'],'Total':p['points']} for p in s['picks'] if p['episode']==ep] if e['results'] else []
+        return render.DataGrid(frame(records,['Team','Out pick','Out points','Title pick','Title points','Total']),filters=True)
 
     @render.data_frame
     def pick_history():
